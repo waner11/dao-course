@@ -2,4 +2,5 @@
 /* tslint:disable */
 /* eslint-disable */
 export { GovernanceContract__factory } from "./GovernanceContract__factory";
+export { GovernorContract__factory } from "./GovernorContract__factory";
 export { TimeLock__factory } from "./TimeLock__factory";

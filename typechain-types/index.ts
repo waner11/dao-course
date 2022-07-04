@@ -58,6 +58,8 @@ export type { Box } from "./contracts/Box";
 export { Box__factory } from "./factories/contracts/Box__factory";
 export type { GovernanceContract } from "./contracts/governance_standard/GovernanceContract";
 export { GovernanceContract__factory } from "./factories/contracts/governance_standard/GovernanceContract__factory";
+export type { GovernorContract } from "./contracts/governance_standard/GovernorContract";
+export { GovernorContract__factory } from "./factories/contracts/governance_standard/GovernorContract__factory";
 export type { TimeLock } from "./contracts/governance_standard/TimeLock";
 export { TimeLock__factory } from "./factories/contracts/governance_standard/TimeLock__factory";
 export type { GovernanceToken } from "./contracts/GovernanceToken";

@@ -1,14 +1,15 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
-import { DeployFunction } from "hardhat-deploy/dist/types";
+import { DeployFunction } from "hardhat-deploy/types";
 import { ethers } from "hardhat";
 
-const deployGovernanceToken: DeployFunction = async function (
+const deployGovernorToken: DeployFunction = async function (
     hre: HardhatRuntimeEnvironment
 ) {
     const { getNamedAccounts, deployments, network } = hre;
     const { deploy, log } = deployments;
     const { deployer } = await getNamedAccounts();
-    log("Deploying Governance Token...");
+    log("Deploying Governor Token...");
+
     const governanceToken = await deploy("GovernanceToken", {
         from: deployer,
         args: [],
@@ -22,12 +23,12 @@ const deployGovernanceToken: DeployFunction = async function (
 }
 
 const delegate = async (
-    governanceTokenAddress: string, 
+    governorTokenAddress: string, 
     delegatedAccount: string
 ) => {
     const governanceToken = await ethers.getContractAt(
         "GovernanceToken", 
-        governanceTokenAddress
+        governorTokenAddress
     );
 
     const tx = await governanceToken.delegate(delegatedAccount);
@@ -35,4 +36,4 @@ const delegate = async (
     console.log(`Checkpoints ${await governanceToken.numCheckpoints(delegatedAccount)}`)
 }
 
-export default deployGovernanceToken;
+export default deployGovernorToken;

@@ -2,4 +2,5 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { GovernanceContract } from "./GovernanceContract";
+export type { GovernorContract } from "./GovernorContract";
 export type { TimeLock } from "./TimeLock";
